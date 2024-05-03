@@ -1,0 +1,38 @@
+/* styles/Card.module.css */
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px; 
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px; 
+    background-color: #fff;
+}
+  
+  .cardImage {
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+  
+  .cardTitle {
+    font-size: 1.2rem;
+    color: black;
+    margin: 5px 0;
+}
+  
+  .cardText {
+    font-size: 0.9rem;
+    color: #333;
+    margin: 3px 0;
+}
+  
+  .cardLink {
+    color: #0070f3;
+    text-decoration: none;
+    margin-top: 10px;
+}
