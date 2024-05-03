@@ -42,5 +42,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 Required Installations: 
 npm install axios
 npm install react-icons --save
+npm install @supabase/supabase-js
 >>>>>>> 4af7d33 (initial commit)
 # MP4_YELPREC
