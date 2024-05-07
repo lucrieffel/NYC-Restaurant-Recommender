@@ -1,4 +1,4 @@
-.header {
+/* .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -73,4 +73,77 @@
   color: #333; 
   margin-top: 20px; 
 }
+ */
 
+ .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px; 
+  background-color: #d32323; 
+
+}
+
+.logo {
+  width: 50px; 
+  height: auto;
+}
+
+.headerTitle {
+  flex-grow: 1;
+  text-align: center; 
+  font-size: 24px; 
+  color: whitesmoke;
+}
+
+.menuWrapper {
+  position: relative; /* This makes it the reference point for the absolutely positioned child */
+  display: flex;
+  align-items: center;
+}
+
+
+.menuButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px; 
+}
+
+/* .menu {
+  display: block; 
+  position: absolute; 
+  right: 0;
+  top: 100%; 
+  background-color: white;
+  border: 1px solid #ccc;
+  width: 200px; 
+  z-index: 1000;
+} */
+.menu {
+  display: block;
+  position: absolute;
+  top: 100%; 
+  right: 0; 
+  background-color: darkgray;
+  border: 1px solid black;
+  width: 200px; 
+  z-index: 1000; 
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: whitesmoke; 
+}
+
+.menu li a:hover {
+  background-color: #f0f0f0; 
+}

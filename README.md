@@ -47,3 +47,4 @@ npm install react-icons --save
 
 npm install @supabase/supabase-js
 
+npm install next-routes --save

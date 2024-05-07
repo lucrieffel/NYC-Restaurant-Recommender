@@ -1,23 +1,49 @@
 // src/components/Header.tsx
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaBars } from 'react-icons/fa'; // Menu icon
 import Link from 'next/link';
 import homeStyles from '../styles/Home.module.css';
+import { useRouter } from 'next/router';
 
 const Header: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const router = useRouter();
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
 
+  // useEffect to log state changes
+  useEffect(() => {
+    console.log('Menu is now:', showMenu);
+  }, [showMenu]); // Dependency array includes showMenu to ensure the effect runs when showMenu changes
+
+  const getHeaderTitle = () => {
+    switch (router.pathname) {
+      case '/':
+        return 'Search New Restaurants';
+      case '/restaurants':
+        return 'Search Existing Restaurants';
+      case '/favorite_restaurants':
+        return 'Add Favorite Restaurants';
+      case '/view_favorites':
+        return 'View Favorite Restaurants';
+      default:
+        return 'Welcome'; // Default title if no route matches
+    }
+  };
+
   return (
     <header className={homeStyles.header}>
       <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0xW8f6ArJ20ndbwQf7zO-Wgi-AdcQ3uA3lJlSj6b0Wg&s" // Replace with your logo path
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0xW8f6ArJ20ndbwQf7zO-Wgi-AdcQ3uA3lJlSj6b0Wg&s"
         alt="Yelp Logo"
         className={homeStyles.logo}
       />
+      <h1 className={homeStyles.headerTitle}>
+        {getHeaderTitle()}
+      </h1>
       <div className={homeStyles.menuWrapper}>
         <button className={homeStyles.menuButton} onClick={toggleMenu}>
           <FaBars />
@@ -26,16 +52,16 @@ const Header: React.FC = () => {
           <nav className={homeStyles.menu}>
             <ul>
               <li>
-                <Link href="/">Home</Link>
+                <Link href="/">Search New Restaurants</Link>
               </li>
               <li>
-                <Link href="/restaurants">View All Restaurants</Link>
+                <Link href="/restaurants">Search Existing Restaurants</Link>
               </li>
               <li>
-                <Link href="/favorite_restaurants">Add Your Favorite Restaurants</Link>
+                <Link href="/favorite_restaurants">Add Favorite Restaurants</Link>
               </li>
               <li>
-                <Link href="/view_favorites">View Your Favorite Restaurants</Link>
+                <Link href="/view_favorites">View Favorite Restaurants</Link>
               </li>
             </ul>
           </nav>
@@ -46,4 +72,3 @@ const Header: React.FC = () => {
 };
 
 export default Header;
-
