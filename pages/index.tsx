@@ -16,7 +16,7 @@ const Home: React.FC = () => {
     const searchYelp = (term: string) => {
         setLoading(true);
         setError('');
-        setQueryTerm(term); // Set the query term
+        setQueryTerm(term); // Set the query term in the state to display in the title
     
         const url = '/api/search'; // Proxy path to avoid CORS issues
     
