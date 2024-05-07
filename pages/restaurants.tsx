@@ -4,7 +4,7 @@ import supabase from '../components/config/supabaseClient';
 import Header from '../components/Header';
 import restaurantStyles from '../styles/Restaurants.module.css';
 import cardStyles from '../styles/Card.module.css';
-import SearchBar from '../components/SearchBar'; // Import the SearchBar component
+import SearchBar from '../components/SearchBar';
 
 
 interface Restaurant {

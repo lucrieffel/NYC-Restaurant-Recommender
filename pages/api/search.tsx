@@ -1,6 +1,5 @@
 //create a next API route that acts like a server-side proxy.
 //The front-end code should request data from the API route instead of the external API directly.
-// path: pages/api/search.tsx
 // pages/api/search.tsx
 import axios from 'axios';
 import { NextApiRequest, NextApiResponse } from 'next';
@@ -32,7 +31,7 @@ export default async function handler(
           // Add a description of the results
           const description = `Showing top 50 ${term} restaurants:`;
   
-          res.status(200).json({ description, ...response.data }); // successful query
+          res.status(200).json({ description, ...response.data }); // successful query response
       } catch (error: any) {
           console.error('Error fetching data from Yelp:', error);
           res.status(error.response?.status || 500).json({ message: 'Error fetching data' });

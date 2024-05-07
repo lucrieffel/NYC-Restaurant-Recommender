@@ -1,9 +1,9 @@
+// src/components/Results.tsx
+
 import React from 'react';
-// import cardStyles from '../styles/Card.module.css';
 import styles from '../styles/Results.module.css'; 
 import cardStyles from '../styles/Card.module.css';
 
-// src/components/Results.tsx
 export interface Result {
   id: string;
   name: string;

@@ -1,5 +1,5 @@
 // src/components/Header.tsx
-// import React, { useState } from 'react';
+
 import React, { useState, useEffect } from 'react';
 import { FaBars } from 'react-icons/fa'; // Menu icon
 import Link from 'next/link';
@@ -14,10 +14,9 @@ const Header: React.FC = () => {
     setShowMenu(!showMenu);
   };
 
-  // useEffect to log state changes
   useEffect(() => {
     console.log('Menu is now:', showMenu);
-  }, [showMenu]); // Dependency array includes showMenu to ensure the effect runs when showMenu changes
+  }, [showMenu]); 
 
   const getHeaderTitle = () => {
     switch (router.pathname) {
@@ -30,7 +29,7 @@ const Header: React.FC = () => {
       case '/view_favorites':
         return 'View Favorite Restaurants';
       default:
-        return 'Welcome'; // Default title if no route matches
+        return 'Welcome'; //default title 
     }
   };
 

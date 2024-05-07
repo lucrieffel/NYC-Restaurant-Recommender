@@ -1,3 +1,5 @@
+// src/components/SearchBar.tsx
+
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import styles from '../styles/SearchBar.module.css'; 
 
