@@ -28,7 +28,7 @@ export default async function handler(
       try {
           const response = await axios.get('https://api.yelp.com/v3/businesses/search', config);
           
-          // Add a description of the results
+
           const description = `Showing top 50 ${term} restaurants:`;
   
           res.status(200).json({ description, ...response.data }); // successful query response
