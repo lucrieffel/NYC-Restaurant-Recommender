@@ -1,9 +1,8 @@
 //pages/favorite_restaurants.tsx
 import React, { useState } from 'react';
-import Link from 'next/link';
 import supabase from '../components/config/supabaseClient';
 import Header from '../components/Header';
-import restaurantStyles from '../styles/Restaurants.module.css';
+import favoritesStyles from '../styles/Favorites.module.css';
 
 const FavoriteRestaurants: React.FC = () => {
     const [userID, setUserID] = useState<string>('');
@@ -30,7 +29,7 @@ const FavoriteRestaurants: React.FC = () => {
         } else {
             console.log('Data inserted successfully: ', data);
             setFeedback('Favorite restaurant added successfully!');
-            //clear form after successful submission
+            // Clear form after successful submission
             setUserID('');
             setRestaurantName('');
             setCuisine('');
@@ -40,57 +39,67 @@ const FavoriteRestaurants: React.FC = () => {
     };
 
     return (
-        <div className={restaurantStyles.container}>
+        <div className={favoritesStyles.container}>
             <Header />
-            <form onSubmit={submitForm} className={restaurantStyles.form}>
-                <label>
-                    User ID:
+            <form onSubmit={submitForm} className={favoritesStyles.form}>
+                <div className={favoritesStyles.formGroup}>
+                    <label htmlFor="userID" className={favoritesStyles.label}>User ID (Email):</label>
                     <input
-                        type="text"
+                        type="email"
+                        id="userID"
                         value={userID}
                         onChange={(e) => setUserID(e.target.value)}
                         required
+                        className={favoritesStyles.input}
                     />
-                </label>
-                <label>
-                    Restaurant Name:
+                </div>
+                <div className={favoritesStyles.formGroup}>
+                    <label htmlFor="restaurantName" className={favoritesStyles.label}>Restaurant Name:</label>
                     <input
                         type="text"
+                        id="restaurantName"
                         value={restaurantName}
                         onChange={(e) => setRestaurantName(e.target.value)}
                         required
+                        className={favoritesStyles.input}
                     />
-                </label>
-                <label>
-                    Cuisine:
+                </div>
+                <div className={favoritesStyles.formGroup}>
+                    <label htmlFor="restaurantCuisine" className={favoritesStyles.label}>Cuisine:</label>
                     <input
                         type="text"
+                        id="restaurantCuisine"
                         value={restaurantCuisine}
                         onChange={(e) => setCuisine(e.target.value)}
                         required
+                        className={favoritesStyles.input}
                     />
-                </label>
-                <label>
-                    Number of Times Visited:
+                </div>
+                <div className={favoritesStyles.formGroup}>
+                    <label htmlFor="numTimesVisited" className={favoritesStyles.label}>Number of Times Visited:</label>
                     <input
                         type="number"
+                        id="numTimesVisited"
                         value={numTimesVisited}
                         onChange={(e) => setNumberOfTimesVisited(parseInt(e.target.value))}
                         required
+                        className={favoritesStyles.input}
                     />
-                </label>
-                <label>
-                    User Rating:
+                </div>
+                <div className={favoritesStyles.formGroup}>
+                    <label htmlFor="userRating" className={favoritesStyles.label}>User Rating:</label>
                     <input
                         type="number"
-                        step="0.1" 
+                        step="0.1"
+                        id="userRating"
                         value={userRating}
                         onChange={(e) => setRating(parseFloat(e.target.value))}
                         required
+                        className={favoritesStyles.input}
                     />
-                </label>
-                <button type="submit">Submit</button>
-                {feedback && <p>{feedback}</p>}
+                </div>
+                <button type="submit" className={favoritesStyles.button}>Submit</button>
+                {feedback && <p className={favoritesStyles.feedback}>{feedback}</p>}
             </form>
         </div>
     );

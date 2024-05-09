@@ -41,7 +41,7 @@ const ViewFavorites: React.FC = () => {
                     type="text"
                     value={userID}
                     onChange={(e) => setUserID(e.target.value)}
-                    placeholder="Enter User ID to view favorites"
+                    placeholder="Enter User ID(email) to view favorites"
                 />
                 <button onClick={fetchFavorites}>Fetch Favorites</button>
             </div>
