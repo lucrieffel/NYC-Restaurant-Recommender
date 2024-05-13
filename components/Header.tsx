@@ -62,6 +62,9 @@ const Header: React.FC = () => {
               <li>
                 <Link href="/view_favorites">View Favorite Restaurants</Link>
               </li>
+              {/* <li>
+                <Link href="/recommender">Get Recommendations</Link>
+              </li> */}
             </ul>
           </nav>
         )}

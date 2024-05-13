@@ -52,3 +52,30 @@ npm install @supabase/supabase-js
 npm install next-routes --save
 
 npm install @tensorflow/tfjs-node
+
+npm install csv-parser
+
+# Questions: 
+What are the design principles of your site? (Color pallette, fonts, layout, etc.)
+- My color pallete is a simple white and "yelp-red" pallete that highlights the content on the page. I used a flex and card based layout with a search bar component that makes my website look cohesive.
+
+What is the purpose of your site? Why does it need to exist?
+- The purpose of the website is to allow users to find popular NYC restaurants. The user can also add their favorite restaurants and have the data persist to a database. Eventually I will implement the ML model I created to recommend a restaurant based on user preference history but that was out of the scope of this class so I was unable to design it in time for the final project.
+
+Does your site look good on multiple screen sizes
+- Yes! I used a mix of flex, relative, and fixed layouts for my site components.
+
+What is the Netlify URL of your site
+- Netlify deployed website link: [click here](https://main--nycyelprecommende.netlify.app/)
+
+How does your site use state to keep track of user interaction?
+- My site uses state to keep track of user interaction
+
+Does your site fetch data from: 
+an internal source?:
+- Yes, I am storing the user preferences(and a large amount of restaurants queried historically from Yelp) in a SupaBase SQL server
+a third party API?
+- Yes, I created a feature to fetch data from the Yelp API in the Search For New Restaurants page
+
+Does your site persist data using a third-party tool or database
+- Yes my website will dynamically insert and read user preferences and Yelp's restaurant data to SupaBase
