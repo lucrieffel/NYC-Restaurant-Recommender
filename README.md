@@ -1,4 +1,4 @@
-# MP4_YelpRestaurantRecommendation
+# NYC Yelp Restaurant Recommendation Application
 
 # Netlify deployed website link: [click here](https://main--nycyelprecommende.netlify.app/)
 
