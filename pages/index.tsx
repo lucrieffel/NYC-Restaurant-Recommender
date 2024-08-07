@@ -6,6 +6,7 @@ import Results, { Result } from '../components/Results';
 import homeStyles from '../styles/Home.module.css';
 import Header from '../components/Header';
 import cardStyles from '../styles/Card.module.css';
+import * as tf from '@tensorflow/tfjs';
 
 const Home: React.FC = () => {
     const [results, setResults] = useState<Result[]>([]);
