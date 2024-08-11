@@ -14,7 +14,8 @@ const RecommendationsPage: React.FC = () => {
     useEffect(() => {
         const loadModel = async () => {
             try {
-                const loadedModel = await tf.loadGraphModel('/Users/lucrieffel/Desktop/CPSC_458/MP4_YelpRec/mp4_yelprec/tfjs-model/model.json'); // Ensure the correct path
+                // const loadedModel = await tf.loadGraphModel('https://raw.githubusercontent.com/lucrieffel/NYC_Restaurant_Recommendation_Algorithm/main/model.json'); 
+                const loadedModel = await tf.loadGraphModel('https://raw.githubusercontent.com/lucrieffel/NYC_Restaurant_Recommendation_Algorithm/main/model.json'); 
                 setModel(loadedModel);
                 console.log('Model loaded successfully');
             } catch (error) {
